@@ -1,0 +1,53 @@
+@use "../abstract/colors" as *;
+@use "../abstract/breakpoints" as *;
+@use "../components/container" as *;
+
+footer {
+  background-color: $clr-primary900;
+  padding-inline: 1em;
+  padding-bottom: 3.75rem;
+
+  > *,
+  a {
+    color: $clr-primary100;
+  }
+
+  .inner {
+    display: flex;
+    flex-wrap: wrap;
+
+    > * {
+      width: 50%;
+    }
+
+    .footer-column:nth-child(3),
+    .footer-column:nth-child(4) {
+      margin-bottom: 4.5rem;
+    }
+  }
+
+  .footer-column-copyright {
+    img {
+      margin-bottom: 1rem;
+      max-width: 8.6rem;
+    }
+  }
+}
+
+@include mq(sm) {
+  footer {
+    display: flex;
+    align-items: end;
+
+    .inner {
+      > * {
+        width: 40%;
+      }
+
+      .footer-column:nth-child(3),
+      .footer-column:nth-child(4) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@use "../abstract/breakpoints" as *;
+
+.container {
+  width: min(100%, 1500px);
+  margin-inline: auto;
+}
+
+@include mq(xs) {
+  .container {
+    width: min(100% - 2rem, 1500px);
+  }
+}
+
+@include mq(md) {
+  .container {
+    width: min(100% - 7rem, 1500px);
+    margin-inline: auto;
+  }
+}

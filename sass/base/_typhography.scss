@@ -1,0 +1,108 @@
+@use "../abstract/colors" as *;
+@use "../abstract/breakpoints" as *;
+
+header {
+  nav {
+    li:first-child {
+      .link-help {
+        color: $clr-primary100;
+        border-left: 2px solid $clr-primary100;
+        padding-left: 0.2em;
+        padding-top: 0.2em;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .hero {
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      letter-spacing: -4px;
+      text-align: center;
+      margin-bottom: 0.8em;
+    }
+  }
+
+  @include mq(xs) {
+    .hero {
+      h1 {
+        font-size: 4rem;
+      }
+    }
+  }
+  @include mq(md) {
+    .hero {
+      h1 {
+        font-size: 5rem;
+        margin-bottom: 0.2em;
+      }
+    }
+  }
+}
+
+main {
+  .category-list {
+    .category-list__item {
+      .category-list__content {
+        .category-list__title {
+          width: min(100%, 30ch);
+          font-size: 1.5rem;
+          margin-bottom: 1.2rem;
+        }
+
+        .category-list__desc {
+          width: min(100%, 30ch);
+          font-size: 1.5rem;
+          margin-bottom: 1.2rem;
+        }
+
+        .category-list__link {
+          font-size: 1.25rem;
+        }
+
+        @include mq(md) {
+          .category-list__title {
+            width: min(100%, 20ch);
+          }
+
+          .category-list__desc {
+            width: min(100%, 28ch);
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  a,
+  p {
+    line-height: 1.5;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+
+  .inner > * {
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    a {
+      display: block;
+      width: max(40%, 6ch);
+    }
+
+    h3 {
+      margin: 3rem 0 1rem;
+    }
+  }
+
+  .inner .footer-column:nth-child(4) {
+    a:nth-child(4) {
+      margin-bottom: 1.8rem;
+    }
+  }
+}

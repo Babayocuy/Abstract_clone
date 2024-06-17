@@ -1,0 +1,263 @@
+@use "../abstract/colors" as *;
+@use "../abstract/breakpoints" as *;
+@use "../components/container" as *;
+
+header {
+  background-color: $clr-primary900;
+
+  nav {
+    display: flex;
+    padding: 0.8em;
+    flex-direction: column;
+    position: relative;
+
+    li:first-child {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      img {
+        max-width: 8.2rem;
+      }
+    }
+
+    li:last-child {
+      margin-top: 0.4rem;
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      i {
+        color: $clr-primary100;
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+
+      input[type="checkbox"] {
+        visibility: hidden;
+        display: none;
+
+        &:checked + label .bar .top {
+          transform: rotate(-45deg);
+          transform-origin: right;
+          top: -10px;
+        }
+
+        &:checked + label .bar .bottom {
+          transform: rotate(45deg);
+          transform-origin: right;
+        }
+
+        &:checked + label .bar .middle {
+          transform: translateX(5px);
+          opacity: 0;
+        }
+
+        &:checked ~ .dropdown {
+          display: flex;
+        }
+      }
+
+      .bar {
+        position: relative;
+        cursor: pointer;
+        left: 45px;
+
+        .middle {
+          height: 2px;
+          width: 25px;
+          background-color: $clr-primary100;
+          border-radius: 50px;
+          position: absolute;
+          transition: 0.3s ease-in-out;
+        }
+
+        .top {
+          bottom: 6px;
+          height: 2px;
+          width: 25px;
+          background-color: $clr-primary100;
+          border-radius: 50px;
+          position: absolute;
+          transition: 0.3s ease;
+        }
+
+        .bottom {
+          top: 8px;
+          height: 2px;
+          width: 25px;
+          background-color: $clr-primary100;
+          border-radius: 50px;
+          position: absolute;
+          transition: 0.3s ease;
+        }
+      }
+
+      .dropdown {
+        display: none;
+        border-top: 1px solid $clr-primary100;
+        background-color: $clr-primary900;
+        width: 100%;
+        left: 0;
+        flex-direction: column;
+        align-items: center;
+        padding-block: 5em;
+        position: fixed;
+        top: 94px;
+
+        button {
+          background: transparent;
+          border: none;
+          padding-block: 0.5em;
+          color: $clr-primary100;
+          font-size: 1.5rem;
+
+          &:first-child {
+            border-bottom: 1px solid $clr-primary100;
+          }
+        }
+      }
+
+      .btn-xl {
+        display: none;
+      }
+
+      .input-linked {
+        display: none;
+        background-color: $clr-primary100;
+        width: 100%;
+        position: fixed;
+        padding-inline: 1.5em;
+        align-items: center;
+        column-gap: 1rem;
+        top: 0;
+        left: 0;
+        bottom: 520px;
+
+        .input-linked-search {
+          width: 100%;
+          font-size: 1.2rem;
+          padding: 0.8em;
+          border-radius: 0.2rem;
+          border: none;
+          outline: 1px solid $clr-primary900;
+        }
+      }
+    }
+  }
+}
+
+@include mq(xxs) {
+  header {
+    nav {
+      padding-block: 1.6em;
+      flex-direction: row;
+      justify-content: space-between;
+
+      li:last-child {
+        margin-right: 3rem;
+
+        .dropdown {
+          top: 86px;
+        }
+
+        .input-linked {
+          bottom: 530px;
+        }
+      }
+    }
+  }
+}
+
+@include mq(xl) {
+  header {
+    nav {
+      padding-block: 1em;
+
+      li:first-child {
+        gap: 1rem;
+
+        .link-help {
+          padding-left: 1rem;
+        }
+      }
+
+      li:last-child {
+        > :not(.btn-xl) {
+          display: none;
+        }
+
+        .btn-xl {
+          display: block;
+          button {
+            border: none;
+            padding-block: 0;
+            color: $clr-primary100;
+            font-size: 1.5rem;
+
+            &:first-child {
+              outline: 1px solid $clr-primary100;
+              padding: 0.4em 1em;
+              border-radius: 0.4rem;
+              background: transparent;
+              border-bottom: none;
+            }
+
+            &:last-child {
+              margin-left: 1rem;
+              background-color: $clr-secondary-blue;
+              padding: 0.4em 1.4em;
+              border-radius: 0.4rem;
+              cursor: pointer;
+              transition: all 0.5s;
+
+              &:focus {
+                background-color: $clr-primary100;
+                color: $clr-primary900;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+header {
+  .hero {
+    background-color: $clr-secondary-grey;
+    padding: 5.6em 1em;
+
+    form {
+      display: flex;
+      justify-content: center;
+
+      .wrap-input {
+        position: relative;
+        width: min(100%, 46rem);
+
+        input[type="text"] {
+          width: min(100%, 46rem);
+          padding: 1em 0.8em;
+          font-size: 1.4rem;
+          border-radius: 0.2em;
+          border: none;
+          outline: 1px solid $clr-primary900;
+          box-shadow: 0 5px 15px 0px rgba(110, 110, 110, 0.544);
+
+          &:focus {
+            outline: 1px solid $clr-secondary-blue;
+          }
+        }
+
+        img {
+          width: 2rem;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}
