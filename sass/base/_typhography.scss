@@ -87,6 +87,7 @@ footer {
 
   .inner > * {
     h3 {
+      margin: 3rem 0 1rem;
       font-size: 1.5rem;
     }
 
@@ -94,15 +95,19 @@ footer {
       display: block;
       width: max(40%, 6ch);
     }
-
-    h3 {
-      margin: 3rem 0 1rem;
-    }
   }
 
   .inner .footer-column:nth-child(4) {
     a:nth-child(4) {
       margin-bottom: 1.8rem;
+    }
+  }
+
+  @include mq(sm) {
+    .inner > * {
+      a {
+        width: 100%;
+      }
     }
   }
 }
