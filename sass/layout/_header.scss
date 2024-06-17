@@ -26,7 +26,6 @@ header {
       margin-top: 0.4rem;
       display: flex;
       align-items: center;
-      // position: relative;
 
       i {
         color: $clr-primary100;
@@ -158,10 +157,6 @@ header {
       li:last-child {
         margin-right: 3rem;
 
-        // .dropdown {
-        //   top: 86px;
-        // }
-
         .input-linked {
           bottom: 530px;
         }
@@ -171,51 +166,49 @@ header {
 }
 
 @include mq(xl) {
-  header {
-    nav {
-      padding-block: 1em;
+  header nav {
+    padding-block: 1em;
 
-      li:first-child {
-        gap: 1rem;
+    li:first-child {
+      gap: 1rem;
 
-        .link-help {
-          padding-left: 1rem;
-        }
+      .link-help {
+        padding-left: 1rem;
+      }
+    }
+
+    li:last-child {
+      > :not(.btn-xl) {
+        display: none;
       }
 
-      li:last-child {
-        > :not(.btn-xl) {
-          display: none;
-        }
+      .btn-xl {
+        display: block;
+        button {
+          border: none;
+          padding-block: 0;
+          color: $clr-primary100;
+          font-size: 1.5rem;
 
-        .btn-xl {
-          display: block;
-          button {
-            border: none;
-            padding-block: 0;
-            color: $clr-primary100;
-            font-size: 1.5rem;
+          &:first-child {
+            outline: 1px solid $clr-primary100;
+            padding: 0.4em 1em;
+            border-radius: 0.4rem;
+            background: transparent;
+            border-bottom: none;
+          }
 
-            &:first-child {
-              outline: 1px solid $clr-primary100;
-              padding: 0.4em 1em;
-              border-radius: 0.4rem;
-              background: transparent;
-              border-bottom: none;
-            }
+          &:last-child {
+            margin-left: 1rem;
+            background-color: $clr-secondary-blue;
+            padding: 0.4em 1.4em;
+            border-radius: 0.4rem;
+            cursor: pointer;
+            transition: all 0.5s;
 
-            &:last-child {
-              margin-left: 1rem;
-              background-color: $clr-secondary-blue;
-              padding: 0.4em 1.4em;
-              border-radius: 0.4rem;
-              cursor: pointer;
-              transition: all 0.5s;
-
-              &:focus {
-                background-color: $clr-primary100;
-                color: $clr-primary900;
-              }
+            &:focus {
+              background-color: $clr-primary100;
+              color: $clr-primary900;
             }
           }
         }
