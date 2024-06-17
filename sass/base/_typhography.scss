@@ -42,35 +42,33 @@ header {
 }
 
 main {
-  .category-list {
-    .category-list__item {
-      .category-list__content {
-        .category-list__title {
-          width: min(100%, 30ch);
-          font-size: 1.5rem;
-          margin-bottom: 1.2rem;
-        }
+  .category-list
+    .category-list__item
+    .category-list__content
+    .category-list__title {
+    width: min(100%, 30ch);
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
 
-        .category-list__desc {
-          width: min(100%, 30ch);
-          font-size: 1.5rem;
-          margin-bottom: 1.2rem;
-        }
+  .category-list__desc {
+    width: min(100%, 30ch);
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+  }
 
-        .category-list__link {
-          font-size: 1.25rem;
-        }
+  .category-list__link {
+    font-size: 1.25rem;
+    color: $clr-secondary-blue;
+  }
 
-        @include mq(md) {
-          .category-list__title {
-            width: min(100%, 20ch);
-          }
+  @include mq(md) {
+    .category-list__title {
+      width: min(100%, 20ch);
+    }
 
-          .category-list__desc {
-            width: min(100%, 28ch);
-          }
-        }
-      }
+    .category-list__desc {
+      width: min(100%, 28ch);
     }
   }
 }
