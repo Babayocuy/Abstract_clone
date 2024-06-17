@@ -13,7 +13,11 @@ main {
       padding-block: 5.5rem 3.5rem;
 
       &:not(:first-child) {
-        padding-top: 3rem;
+        padding-top: 3em;
+      }
+
+      &:last-child {
+        padding-bottom: 8em;
       }
 
       .category-list__icon > img {
@@ -27,11 +31,7 @@ main {
 @include mq(xs) {
   main .category-list .category-list__item {
     display: flex;
-    padding-block: 5.5rem 3.5rem;
-
-    &:not(:first-child) {
-      padding-top: 3rem;
-    }
+    width: 100%;
 
     .category-list__icon > img {
       margin-left: 2rem;
@@ -47,7 +47,7 @@ main {
 
 @include mq(md) {
   main .category-list {
-    padding-top: 8rem;
+    padding-block: 8rem;
 
     .category-list__item {
       min-height: 115px;
