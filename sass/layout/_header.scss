@@ -10,6 +10,7 @@ header {
     padding: 0.8em;
     flex-direction: column;
     position: relative;
+    z-index: 99;
 
     li:first-child {
       display: flex;
@@ -25,7 +26,7 @@ header {
       margin-top: 0.4rem;
       display: flex;
       align-items: center;
-      position: relative;
+      // position: relative;
 
       i {
         color: $clr-primary100;
@@ -97,13 +98,13 @@ header {
         display: none;
         border-top: 1px solid $clr-primary100;
         background-color: $clr-primary900;
-        width: 100%;
-        left: 0;
         flex-direction: column;
         align-items: center;
         padding-block: 5em;
-        position: fixed;
-        top: 94px;
+        position: absolute;
+        left: -3.48rem;
+        right: -3.48rem;
+        top: 86px;
 
         button {
           background: transparent;
@@ -157,9 +158,9 @@ header {
       li:last-child {
         margin-right: 3rem;
 
-        .dropdown {
-          top: 86px;
-        }
+        // .dropdown {
+        //   top: 86px;
+        // }
 
         .input-linked {
           bottom: 530px;
